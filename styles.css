@@ -107,16 +107,16 @@ svg {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-      scroll-behavior: auto;
+    scroll-behavior: auto;
   }
 
   *,
   *::before,
   *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -163,10 +163,43 @@ section:nth-child(even) {
 
 @media (max-width: 47em) {
   .wrapper {
-      display: grid;
-      gap: var(--size-600);
-      text-align: left;
-      font-weight: var(--fw-bold);
+    display: grid;
+    gap: var(--size-600);
+    text-align: left;
+    font-weight: var(--fw-bold);
+  }
+}
+
+.button {
+  --_size: var(--fs-button);
+  --_color: var(--clr-neutral-800);
+
+  &[data-type="inverted"] {
+    --_color: var(--clr-neutral-400);
+  }
+
+  display: inline-flex;
+  justify-items: baseline;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--_size);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--_color);
+
+  & .icon {
+    position: relative;
+    width: calc(var(--_size) + 1rem);
+    aspect-ratio: 1;
+    fill: var(--_color);
+    margin-left: 0.5rem;
+    top: -0.5rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    --_color: var(--clr-primary-400);
   }
 }
 
@@ -182,7 +215,7 @@ section:nth-child(even) {
 
 @media (max-width: 47em) {
   .hero-wrapper {
-      padding-bottom: var(--size-900);
+    padding-bottom: var(--size-900);
   }
 }
 
@@ -202,34 +235,6 @@ section:nth-child(even) {
 
 .hero__tagline {
   text-transform: lowercase;
-}
-
-.hero__button {
-  --_size: var(--fs-button);
-  --_color: var(--clr-neutral-800);
-
-  display: inline-flex;
-  justify-items: baseline;
-  cursor: pointer;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: var(--_size);
-  font-weight: var(--fw-bold);
-  line-height: 1;
-  color: var(--_color);
-  padding-top: 5rem;
-
-  & .icon {
-      width: var(--_size);
-      aspect-ratio: 1;
-      fill: var(--_color);
-      margin-left: 0.5rem;
-  }
-}
-
-.hero__button:hover,
-.hero__button:focus-visible {
-  --_color: var(--clr-primary-400);
 }
 
 .hero__image {
@@ -366,8 +371,22 @@ section:nth-child(even) {
 /* #region Footer */
 
 .final-call {
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-neutral-800)
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-neutral-800);
+}
+
+.final-call a {
+  color: var(--clr-neutral-400);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--clr-primary-400);
+  }
+}
+
+.flex-start {
+  align-self: flex-start;
 }
 
 /* #endregion Footer */
@@ -402,9 +421,43 @@ section:nth-child(even) {
 
 @media (min-width: 47em) {
   .even-columns {
-      grid-auto-flow: column;
-      grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
   }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center p {
+  margin-inline: auto;
+}
+
+@media (max-width: 47em) {
+  .text-center-sm-only {
+    text-align: center;
+  }
+
+  .text-center-sm-only p {
+    margin-inline: auto;
+  }
+}
+
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-800 {
+  color: var(--clr-neutral-800);
 }
 
 .vertical-align-center {
@@ -414,6 +467,46 @@ section:nth-child(even) {
 /* alternative selector ':where(.flow :not(:first-child))' */
 .flow *+* {
   margin-top: var(--flow-spacer, 3em);
+}
+
+.ff-accent {
+  font-family: var(--ff-accent);
+}
+
+.fs-100 {
+  font-size: var(--fs-100);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
 }
 
 .fw-thin {
@@ -470,7 +563,7 @@ section:nth-child(even) {
 
 @media (min-width: 47em) {
   .display-md-inline-flex {
-      display: inline-flex;
+    display: inline-flex;
   }
 }
 

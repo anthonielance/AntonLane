@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Stalemate&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -22,7 +22,7 @@
                     <p class="hero__eyebrow">Hello! This is</p>
                     <h1 class="hero__title">Anton<span class="fw-black">Lane</span></h1>
                     <p class="hero__tagline">I am a analytical problem solver</p>
-                    <a class="hero__button" href="#">
+                    <a class="button | margin-top-900" href="#">
                         Download Resume
                         <span>
                             <svg class="icon">
@@ -42,7 +42,10 @@
         <div class="container">
             <div class="wrapper padding-block-900">
                 <h2 class="section__title">About</h2>
-                <p class="section__body">Bender is great!</p>
+                <div>
+                    <p class="section__body">The best analytical problem solver in information technology!</p>
+                    <p class="fs-700 ff-accent text-right text-primary-400">Anton Lane</p>
+                </div>
             </div>
         </div>
     </section>
@@ -51,7 +54,12 @@
         <div class="container">
             <div class="wrapper padding-block-900">
                 <h2 class="section__title">Education</h2>
-                <p class="section__body">Edumacation stuff here</p>
+                <div class="section__body">
+                    <p class="fw-light fs-200">Fancy Degree</p>
+                    <p class="fw-medium fs-500 text-primary-400">Popular Program</p>
+                    <p class="fw-light fs-300">Very Expensive, Therefore Good University</p>
+                    <p class="fw-light fs-300">Some Town, Some State</p>
+                </div>
             </div>
         </div>
     </section>
@@ -218,16 +226,22 @@
         </div>
     </section>
 
-    <footer class="final-call">
+    <footer class="final-call fs-200">
         <div class="container">
-            <div class="wrapper">
-                <a id="1" href="#" class="| display-sm-none display-md-inline-flex" data-type="inverted">
+            <div class="wrapper padding-block-900">
+                <a class="button flex-start" data-type="inverted" href="#">
                     Download Resume
+                    <span>
+                        <svg class="icon">
+                            <use xlink:href="./public/images/mt-icons.svg#download" />
+                        </svg>
+                    </span>
                 </a>
-                <p class="address"><span>Anton Lane</span><br />
+                <p class="address">
+                    <span>Anton Lane</span><br />
                     <a href="mailto:anton.lane@dev.me">anton.lane@dev.me</a><br />
                     <a href="tel:5555555555">(555) 555-5555</a><br />
-                    Some Town, SS<br />
+                    <a href="https://www.mapquest.com/us/SomeState/Some Town-SS">Some Town, SS</a><br />
                 </p>
             </div>
         </div>
