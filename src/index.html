@@ -2,16 +2,236 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <title>Grid</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="gridlock.css">
 </head>
 
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-wrapper | margin-top-900">
+                <div>
+                    <p class="hero__eyebrow">Hello! This is</p>
+                    <h1 class="hero__title">Anton<span class="fw-black">Lane</span></h1>
+                    <p class="hero__tagline">I am a analytical problem solver</p>
+                    <a class="hero__button" href="#">
+                        Download Resume
+                        <span>
+                            <svg class="icon">
+                                <use xlink:href="images/mt-icons.svg#download" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+                <div class="hero__image | display-sm-none display-md-inline-flex">
+                    <img class="" width="240px" src="images/self-protrait.webp" alt="self portrait" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <div class="wrapper padding-block-900">
+                <h2 class="section__title">About</h2>
+                <p class="section__body">Bender is great!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="edu">
+        <div class="container">
+            <div class="wrapper padding-block-900">
+                <h2 class="section__title">Education</h2>
+                <p class="section__body">Edumacation stuff here</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <div class="skills-wrapper padding-block-900">
+                <h2 class="section__title">Skills</h2>
+                <div>
+                    <h3 class="section__subtitle">Cloud</h3>
+                    <div class="skill-group">
+                        <ul role="list" class="skill-list">
+                            <li>Azure AD</li>
+                            <li>Identity Protection</li>
+                            <li>Privileged Identity Management</li>
+                            <li>Conditional Access</li>
+                            <li>Azure ATP</li>
+                            <li>Key Vault</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>API Management</li>
+                            <li>Application Gateway</li>
+                            <li>App Services</li>
+                            <li>Azure Logic Apps</li>
+                            <li>Azure Functions</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>Azure Monitor</li>
+                            <li>Azure DNS</li>
+                            <li>Azure CDN</li>
+                            <li>Azure Virtual Networks</li>
+                            <li>Azure Tables</li>
+                            <li>Azure SQL</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>Intune</li>
+                            <li>Microsoft Flow</li>
+                            <li>Microsoft/Office 365</li>
+                            <li>Exchange Online</li>
+                            <li>SharePoint Online</li>
+                            <li>Adobe Creative Cloud</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="section__subtitle">On-Premises</h3>
+                    <div class="skill-group">
+                        <ul role="list" class="skill-list">
+                            <li>Active Directory</li>
+                            <li>Azure AD Connect</li>
+                            <li>Privileged Identity Management</li>
+                            <li>Group Policy</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>IIS</li>
+                            <li>Tomcat</li>
+                            <li>EzProxy</li>
+                            <li>Zendesk</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>Windows Server</li>
+                            <li>WSUS</li>
+                            <li>SCCM</li>
+                            <li>SQL Server</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>Frevvo</li>
+                            <li>Jenzabar</li>
+                            <li>CBORD</li>
+                            <li>Visual Studio</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="section__subtitle">Languages & Frameworks</h3>
+                    <div class="skill-group">
+                        <ul role="list" class="skill-list">
+                            <li>C#</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>T-SQL</l>
+                            <li>PowerShell</li>
+                            <li>HTML</li>
+                            <li>CSS/SCSS</li>
+                            <li>Markdown</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>ASP.NET Core</li>
+                            <li>XUnit</li>
+                            <li>Serilog</li>
+                            <li>Application Insights</li>
+                            <li>MSAL</li>
+                            <li>OpenAuth</li>
+                            <li>SAML</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>NodeJS</li>
+                            <li>Vite</li>
+                            <li>React</li>
+                            <li>SPFx</li>
+                            <li>RxJS</li>
+                            <li>Webpack</li>
+                        </ul>
+                        <ul role="list" class="skill-list">
+                            <li>Vue</li>
+                            <li>Git/Github</li>
+                            <li>FluentUI</li>
+                            <li>Zendesk Application Framework</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jobs">
+        <div class="container">
+            <div class="jobs-wrapper padding-block-900">
+                <h2 class="section__title">Experience</h2>
+                <div class="job-list">
+                    <div class="job">
+                        <p class="job__year">2004 - Present</p>
+                        <div class="job__info">
+                            <h3 class="job__role">Consultant</h3>
+                            <span class="job__company">Comptek</span>
+                        </div>
+                        <p class="job__summary">The job involves designing plans for customer cloud service
+                            migrations, developing
+                            and testing custom applications, offering software and hardware integration
+                            recommendations, designing and
+                            building custom computers, and diagnosing and resolving technology issues.</p>
+                    </div>
+                    <div class="job">
+                        <p class="job__year">2014 - 2021</p>
+                        <div class="job__info">
+                            <h3 class="job__role">Application Developer</h3>
+                            <span class="job__company">University of Saint Francis</span>
+                        </div>
+                        <p class="job__summary">As an IT professional, I have many responsibilities including
+                            installing, setting
+                            up, maintaining, updating and maintaining various applications such as Azure Functions,
+                            Azure App
+                            Services, IIS and Tomcat. Additionally, I have expertise in integrating third-party cloud
+                            environments
+                            into Active Directory and Azure Active Directory for single sign-on.</p>
+                    </div>
+                    <div class="job">
+                        <p class="job__year">2011 - 2014</p>
+                        <div class="job__info">
+                            <h3 class="job__role">Help Desk Analyst</h3>
+                            <span class="job__company">University of Saint Francis</span>
+                        </div>
+                        <p class="job__summary">Provide technical assistance and support to faculty, students and our
+                            satellite
+                            campuses. Additionally, install and debug various applications and software such as: Windows
+                            and Mac
+                            operating systems, Microsoft Office, Adobe Creative Suites, Autodesk Maya, ProTools and many
+                            other
+                            department specific applications.</p>
+                    </div>
+                </div>
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <footer class="final-call">
+        <div class="container">
+            <div class="wrapper">
+                <a id="1" href="#" class="| display-sm-none display-md-inline-flex" data-type="inverted">
+                    Download Resume
+                </a>
+                <p class="address"><span>Anton Lane</span><br />
+                    <a href="mailto:anton.lane@dev.me">anton.lane@dev.me</a><br />
+                    <a href="tel:5555555555">(555) 555-5555</a><br />
+                    Some Town, SS<br />
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

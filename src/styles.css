@@ -1,21 +1,477 @@
+:root {
+  --clr-neutral-100: hsla(0, 0%, 100%, 1);
+  --clr-neutral-200: hsla(0, 0%, 90%, 1);
+  --clr-neutral-300: hsla(0, 0%, 80%, 1);
+  --clr-neutral-400: hsla(0, 0%, 70%, 1);
+  --clr-neutral-500: hsla(0, 0%, 50%, 1);
+  --clr-neutral-600: hsla(0, 0%, 30%, 1);
+  --clr-neutral-700: hsla(0, 0%, 20%, 1);
+  --clr-neutral-800: hsla(0, 0%, 10%, 1);
+  --clr-neutral-900: hsla(0, 0%, 0%, 1);
+
+  --clr-primary-800: hsla(13, 96%, 73%, 1);
+  --clr-primary-700: hsla(13, 96%, 63%, 1);
+  --clr-primary-400: hsla(13, 96%, 53%, 1);
+  --clr-primary-300: hsla(13, 96%, 43%, 1);
+  --clr-primary-200: hsla(13, 96%, 33%, 1);
+
+  --ff-primary: "Roboto", sans-serif;
+  --ff-accent: 'Stalemate', cursive;
+
+  --fw-thin: 100;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-100: 0.625rem;
+  --fs-200: 0.875rem;
+  --fs-300: 1.000rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-700: clamp(2rem, 10vw - 0.5rem, 3.25rem);
+
+  --fs-body: var(--fs-400);
+  --fs-primary-heading: var(--fs-700);
+  --fs-secondary-heading: var(--fs-600);
+  --fs-button: var(--fs-300);
+
+  --size-100: 0.625rem;
+  --size-200: 0.875rem;
+  --size-300: 1.000rem;
+  --size-400: 1.125rem;
+  --size-500: 1.375rem;
+  --size-600: 1.75rem;
+  --size-700: 2.25rem;
+  --size-800: 2.5rem;
+  --size-900: 3rem;
+}
+
+/* #region Reset */
+
+/* Source of Modern CSS reset */
+/* https://github.com/Andy-set-studio/modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
 * {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-html, body {
   margin: 0;
-  border: 0;
   padding: 0;
-  background-color: #fff;
+  font: inherit;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
 
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+      scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+  }
+}
+
+/* #endregion Reset */
+
+/* #region General Styling */
+
+html {
+  color-scheme: normal;
+}
+
+body {
+  margin: 0;
+  color: var(--clr-neutral-800);
+  background-color: var(--clr-neutral-100);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+}
+
+section:nth-child(even) {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-800);
+
+}
+
+.section__title {
+  font-size: var(--fs-secondary-heading);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.section__subtitle {
+  color: var(--clr-primary-400);
+  font-size: var(--fs-500);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 47em) {
+  .wrapper {
+      display: grid;
+      gap: var(--size-600);
+      text-align: left;
+      font-weight: var(--fw-bold);
+  }
+}
+
+/* #endregion General Styling */
+
+/* #region Hero Section */
+
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 47em) {
+  .hero-wrapper {
+      padding-bottom: var(--size-900);
+  }
+}
+
+.hero__eyebrow {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-light);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.hero__title {
+  color: var(--clr-primary-400);
+  font-size: var(--fs-primary-heading);
+  font-weight: var(--fw-thin);
+  line-height: 1.1;
+}
+
+.hero__tagline {
+  text-transform: lowercase;
+}
+
+.hero__button {
+  --_size: var(--fs-button);
+  --_color: var(--clr-neutral-800);
+
+  display: inline-flex;
+  justify-items: baseline;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--_size);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--_color);
+  padding-top: 5rem;
+
+  & .icon {
+      width: var(--_size);
+      aspect-ratio: 1;
+      fill: var(--_color);
+      margin-left: 0.5rem;
+  }
+}
+
+.hero__button:hover,
+.hero__button:focus-visible {
+  --_color: var(--clr-primary-400);
+}
+
+.hero__image {
+  transform: scaleX(-1);
+  justify-self: flex-end;
+}
+
+/* #endregion Hero Section */
+
+/* #region Skill Section */
+
+.skills-wrapper {
+  /*     display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column; */
+  display: grid;
+  gap: var(--size-600);
+  grid-template-rows: repeat(4, auto);
+}
+
+.skill-group {
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* align-items: stretch; */
+  align-content: center;
+  justify-content: space-between;
+
+  /* display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, auto);
+  align-content: space-around;
+  justify-content: space-between; */
+}
+
+/* #endregion Skill Section */
+
+/* #region Experience Section */
+
+.jobs-wrapper {
+  display: grid;
+  gap: var(--size-600);
+  grid-template-rows: repeat(4, auto);
+}
+
+.job-list {
+  display: grid;
+  justify-content: start;
+  gap: 1rem;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  position: relative;
+  padding-block: 2rem;
+}
+
+/*  Job List: Scrollbar styling */
+
+/* Works on Firefox  */
+.job-list {
+  scrollbar-color: var(--clr-primary-400) var(--clr-neutral-500);
+  scrollbar-width: thin;
+}
+
+/*  Works on Chrome, Edge, Safari */
+.job-list::-webkit-scrollbar {
+  height: 0.75rem;
+}
+
+.job-list::-webkit-scrollbar-track {
+  background-color: var(--clr-neutral-500);
+  border-radius: 100vw;
+}
+
+.job-list::-webkit-scrollbar-thumb {
+  background-color: var(--clr-accent-400);
+  border-radius: 100vw;
+}
+
+.job-list::after {
+  content: "";
+  width: 50px;
+  background-color: transparent;
+}
+
+.job {
+  width: 28.5rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: var(--clr-neutral-200);
+}
+
+.job * {
+  margin: 0;
+}
+
+.job:first-child::before {
+  content: "Current role";
+  position: absolute;
+  color: var(--clr-primary-400);
+  top: 0;
+  left: 0;
+}
+
+.job__year {
+  color: var(--clr-primary-400);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2em;
+}
+
+.job__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.job__role {
+  font-size: var(--fs-600);
+  line-height: 1.2;
+}
+
+.job__company {
+  color: var(--clr-neutral-500);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+/* #endregion Experience Section */
+
+/* #region Footer */
+
+.final-call {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-800)
+}
+
+/* #endregion Footer */
+
+/* #region Utilities */
+
+/* Source of visually-hidden css */
+/* https://a11y-guidelines.orange.com/en/web/components-examples/accessible-hiding/&v=zPHMqqyD2kY */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 47em) {
+  .even-columns {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+  }
+}
+
+.vertical-align-center {
+  align-items: center;
+}
+
+/* alternative selector ':where(.flow :not(:first-child))' */
+.flow *+* {
+  margin-top: var(--flow-spacer, 3em);
+}
+
+.fw-thin {
+  font-weight: var(--fw-thin);
+}
+
+.fw-light {
+  font-weight: var(--fw-light);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+.padding-block-100 {
+  padding-block: var(--size-100);
+}
+
+.padding-block-400 {
+  padding-block: var(--size-400);
+}
+
+.padding-block-900 {
+  padding-block: var(--size-900);
+}
+
+.margin-bottom-700 {
+  margin-block-end: var(--size-700);
+}
+
+.margin-top-900 {
+  margin-block-start: var(--size-900);
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.display-sm-none {
+  display: none;
+}
+
+@media (min-width: 47em) {
+  .display-md-inline-flex {
+      display: inline-flex;
+  }
+}
+
+/* #endregion Utilities */
